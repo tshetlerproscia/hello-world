@@ -58,7 +58,7 @@ jobs:
 
     - name: Tag and Push Docker Image
       run: |
-        docker tag my-image-name:${{ needs.build.outputs.image_tag }} tshetlerproscia/your-image-name:${{ needs.build.outputs.image_tag }}
-        docker tag my-image-name:${{ needs.build.outputs.image_tag }} your-dockerhub-username/your-image-name:latest
-        docker push tshetlerproscia/your-image-name:${{ needs.build.outputs.image_tag }}
-        docker push tshetlerproscia/your-image-name:latest
+        docker tag hello-world:${{ needs.build.outputs.image_tag }} tshetlerproscia/hello-world:${{ needs.build.outputs.image_tag }}
+        docker tag hello-world:${{ needs.build.outputs.image_tag }} tshetlerproscia/hello-world:latest
+        docker push tshetlerproscia/hello-world:${{ needs.build.outputs.image_tag }}
+        docker push tshetlerproscia/hello-world:latest
