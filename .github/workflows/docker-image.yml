@@ -30,7 +30,10 @@ jobs:
 
       - name: Generate Image Tag
         id: set-tag
-        run: echo "IMAGE_TAG=$(date +%s)" >> $GITHUB_ENV
+        run: |
+          IMAGE_TAG=$(date +%s)
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
+          echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_OUTPUT
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag hello-world:$IMAGE_TAG
