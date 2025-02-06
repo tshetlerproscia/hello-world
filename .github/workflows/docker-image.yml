@@ -23,6 +23,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: List repo files
-      run: tree
+      run:  |
+        echo "The repository ${{github.repository }} contains the following 
+        files:"  
+        tree
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
