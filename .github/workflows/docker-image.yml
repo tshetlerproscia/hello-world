@@ -9,6 +9,13 @@ on:
 
 jobs:
 
+  hello:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Hello, Workflows!"
+
   build:
 
     runs-on: ubuntu-latest
